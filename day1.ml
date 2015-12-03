@@ -5,7 +5,11 @@ val explodedParens = (explode parens);
 fun isOpenPar #"(" = true
   | isOpenPar _ = false;
 
-(** the second pattern is part 2, the third pattern is part 1 **)
+(** 
+  the second pattern is part 2, the third pattern is part 1 
+  comment out the second line to get the answer to part 1
+**)
+
 fun day1 (nil, n) = n
   | day1 ((x::xs), ~1) = (length explodedParens) - (length (x::xs))
   | day1 ((x::xs), n) = if isOpenPar(x) then part1(xs,n+1) else part1(xs,n-1);
