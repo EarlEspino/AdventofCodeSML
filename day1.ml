@@ -12,4 +12,4 @@ fun isOpenPar #"(" = true
 
 fun day1 (nil, n) = n
   | day1 ((x::xs), ~1) = (length explodedParens) - (length (x::xs))
-  | day1 ((x::xs), n) = if isOpenPar(x) then part1(xs,n+1) else part1(xs,n-1);
+  | day1 ((x::xs), n) = if isOpenPar(x) then day1(xs,n+1) else day1(xs,n-1);
